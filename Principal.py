@@ -22,7 +22,6 @@ floresta = RandomForestClassifier(n_estimators=90)
 floresta.fit(features_treino,classes_treino)
 predicoes = floresta.predict(features_teste)
 from sklearn import metrics 
-print(metrics.classification_report(classes_teste,predicoes))
 
 
 
