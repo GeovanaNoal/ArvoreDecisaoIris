@@ -2,7 +2,7 @@ import streamlit as st
 
 from sklearn.ensemble import RandomForestClassifier 
 import pandas as pd
-dados = pd.read_csv('/content/drive/MyDrive/Inteligência Artificial - Geovana/23-09 pesq. cursos - Geovana/Floresta Randômica/Iris_Floresta_Randomica.csv')
+dados = pd.read_csv('Iris_Floresta_Randomica.csv')
 
 classes = dados['Species']
 nomesColunas = dados.columns.to_list()
