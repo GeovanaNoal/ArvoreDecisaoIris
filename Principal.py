@@ -26,6 +26,10 @@ from sklearn import metrics
 
 
 st.title('Aplicativo de IA')
-nome = st.text_input('Digite o seu nome:')
+SepalLengthCm = st.number_input('Digite o comprimento da caule')
+SepalWidthCm = st.number_input ('Digite a largura do caulo')
+PetalLengthCm = st.number_input ('Digite o comprimeto da petala')
+PetalWidthCm = st.number_input ('Digite a largura da petala')
 if st.button('Clique aqui'):
+  resultado = floresta.predict([[SepalLengthCm,SepalWidthCm,PetalLengthCm,PetalWidthCm]])
 st.write('Bem vindo(a)',nome,'ao seu primeiro aplicativo')
