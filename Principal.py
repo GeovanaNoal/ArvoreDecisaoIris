@@ -14,22 +14,20 @@ from sklearn.model_selection import train_test_split
 
 features_treino,features_teste,classes_treino,classes_teste = train_test_split(features,
                                                                                classes,
-                                                                               test_size=0.25,
-                                                                               random_state=2)
+                                                                               test_size=0.26,
+                                                                               random_state=3)
 
 floresta = RandomForestClassifier(n_estimators=90) 
 
 floresta.fit(features_treino,classes_treino)
 predicoes = floresta.predict(features_teste)
-from sklearn import metrics 
-
 
 
 st.title('Aplicativo de IA')
-SepalLengthCm = st.number_input('Digite o comprimento da caule')
-SepalWidthCm = st.number_input ('Digite a largura do caulo')
-PetalLengthCm = st.number_input ('Digite o comprimeto da petala')
-PetalWidthCm = st.number_input ('Digite a largura da petala')
+SepalLengthCm = st.number_input('Digite o comprimento do caule')
+SepalWidthCm = st.number_input('Digite a largura do caule')
+PetalLengthCm = st.number_input('Digite o comprimento da petala')
+PetalWidthCm = st.number_input('Digite a largura da petala')
 if st.button('Clique aqui'):
   resultado = floresta.predict([[SepalLengthCm,SepalWidthCm,PetalLengthCm,PetalWidthCm]])
-st.write('Bem vindo(a)',nome,'ao seu primeiro aplicativo')
+  st.write('Resultado:',resultado)
